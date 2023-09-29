@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+          crossorigin="anonymous">
+    <title>Details</title>
+</head>
+<body>
+<header class="text-center bg-warning text-white">
+    <h1 th:text="${recipe.title}"></h1>
+</header>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Image</th>
+        <th>ingredients</th>
+        <th>Time</th>
+        <th>Portions</th>
+        <th>Preparation</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><img th:src="${recipe.img}" alt="recipe" width="300"/></td>
+        <td th:text="${recipe.ingredients}"></td>
+        <td th:text="${recipe.duration}"></td>
+        <td th:text="${recipe.portions}"></td>
+        <td th:text="${recipe.preparation}"></td>
+    </tr>
+    </tbody>
+</table>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+</body>
+
+</body>
+</html>
