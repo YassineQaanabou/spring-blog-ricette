@@ -9,7 +9,14 @@
     <title>Recipes list</title>
 </head>
 <body>
-<h1>Recipes</h1>
+<div class=" text-center pb-1 text-white bg-warning">
+    <h1>Recipes</h1>
+</div>
+<hr>
+
+<div class=" text-center align-content-center">
+    <a class="btn btn-warning" th:href="@{/administration/create}">Add recipe</a>
+</div>
 <hr>
 <table class="table">
     <thead>
@@ -19,7 +26,9 @@
         <th>ingredients</th>
         <th>Time</th>
         <th>Portions</th>
-        <th>preparation</th>
+        <th>Preparation</th>
+        <th>Functions</th>
+
         <th></th>
     </tr>
     </thead>
@@ -31,6 +40,10 @@
         <td th:text="${recipe.duration}"></td>
         <td th:text="${recipe.portions}"></td>
         <td th:text="${recipe.preparation}"></td>
+        <td><a class="btn btn-warning" th:href="@{/administration/edit/{id}(id=${recipe.id})}">Edit</a>
+            <form th:action="@{/administration/delete/{id}(id=${recipe.id})}" method="POST" class="d-inline">
+                <button type="submit" class="btn btn-warning ">Delete</button>
+            </form></td>
     </tr>
     </tbody>
 </table>

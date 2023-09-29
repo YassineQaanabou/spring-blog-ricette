@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+          crossorigin="anonymous">
+    <title>Add recipe</title>
+</head>
+<body>
+<div class=" text-center pb-1 text-white bg-warning">
+    <h1>Add recipe</h1>
+</div>
+<div class="d-flex text-center mx-auto row w-75">
+    <form
+            id="recipe-form"
+            th:object="${recipe}"
+            th:action="@{/administration/create}"
+            method="post">
+        <label for="title" class="form-label">Name</label>
+        <input type="text" class="form-control" id="title" th:field="*{title}" th:errorClass="is-invalid">
+        <div th:if="${#fields.hasErrors('title')}" class="invalid-feedback">
+            <ul>
+                <li th:each="err : ${#fields.errors('title')}" th:text="${err}"></li>
+            </ul>
+        </div>
+
+        <label for="ingredients" class="form-label">Ingredients</label>
+        <input type="text" class="form-control" id="ingredients" th:field="*{ingredients}" th:errorClass="is-invalid">
+        <div th:if="${#fields.hasErrors('ingredients')}" class="invalid-feedback">
+            <ul>
+                <li th:each="err : ${#fields.errors('ingredients')}" th:text="${err}"></li>
+            </ul>
+        </div>
+
+        <label for="img" class="form-label">Image link</label>
+        <input type="text" class="form-control" id="img" th:field="*{img}" th:errorClass="is-invalid">
+        <div th:if="${#fields.hasErrors('img')}" class="invalid-feedback">
+            <ul>
+                <li th:each="err : ${#fields.errors('img')}" th:text="${err}"></li>
+            </ul>
+        </div>
+
+        <label for="duration" class="form-label">Time</label>
+        <input type="number" class="form-control" id="duration" th:field="*{duration}" th:errorClass="is-invalid">
+        <div th:if="${#fields.hasErrors('duration')}" class="invalid-feedback">
+            <ul>
+                <li th:each="err : ${#fields.errors('duration')}" th:text="${err}"></li>
+            </ul>
+        </div>
+
+        <label for="portions" class="form-label">Portions</label>
+        <input type="number" class="form-control" id="portions" th:field="*{portions}" th:errorClass="is-invalid">
+        <div th:if="${#fields.hasErrors('portions')}" class="invalid-feedback">
+            <ul>
+                <li th:each="err : ${#fields.errors('portions')}" th:text="${err}"></li>
+            </ul>
+        </div>
+
+        <label for="preparation" class="form-label">Preparation</label>
+        <input type="text" class="form-control" id="preparation" th:field="*{preparation}" th:errorClass="is-invalid">
+        <div th:if="${#fields.hasErrors('preparation')}" class="invalid-feedback">
+            <ul>
+                <li th:each="err : ${#fields.errors('preparation')}" th:text="${err}"></li>
+            </ul>
+        </div>
+
+
+        <hr>
+
+        <button type="submit" class="btn btn-warning">Save</button>
+        <a class="btn btn-warning" th:href="@{/administration/list}">Cancel</a>
+
+
+    </form>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>
