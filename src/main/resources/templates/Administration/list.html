@@ -36,7 +36,7 @@
     <tbody>
     <tr th:each="recipe : ${recipes}">
         <td><img th:src="${recipe.img}" alt="recipe" width="300"/></td>
-        <td th:text="${recipe.title}"></td>
+        <td class="fw-bold" th:text="${recipe.title}"></td>
         <td th:text="${recipe.ingredients}"></td>
         <td th:text="${recipe.duration}"></td>
         <td th:text="${recipe.portions}"></td>

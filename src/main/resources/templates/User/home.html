@@ -37,12 +37,10 @@
             <img th:src="${recipe.Img}" class="card-img-top" alt="recipe">
             <div class="card-body w-100 pt-0 px-0">
                 <h5 class="card-title bg-warning p-2 text-white" th:text="${recipe.title}"></h5>
-                <p class="card-text fw-bold" th:text="${recipe.ingredients}"></p>
-                <p class="card-text fw-bold" th:text="${recipe.duration}"></p>
-                <p class="card-text fw-bold" th:text="${recipe.portions}"></p>
-                <p class="card-text fw-bold" th:text="${recipe.preparation}"></p>
-                <p class="card-text fw-bold" th:text="${recipe.ingredients}"></p>
                 <p class="card-text fw-bold" th:text="${recipe.getCategoryName}"></p>
+                <p class="card-text fw-bold" th:text="${recipe.duration}"></p>
+                <p class="card-text fw-bold " th:text="${recipe.ingredients}"></p>
+                <p class="card-text " th:text="${recipe.preparation}"></p>
 
 
                 <a class="btn btn-warning" th:href="@{/user/show/{id}(id=${recipe.id})}">Details</a>
