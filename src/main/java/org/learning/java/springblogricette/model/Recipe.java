@@ -8,6 +8,9 @@ public class Recipe {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @ManyToOne
+    @JoinColumn(name = "category_id", nullable = false)
+    private Category category;
     private String title;
     private String ingredients;
     private int duration;
@@ -30,6 +33,10 @@ public class Recipe {
 
     public Integer getId() {
         return id;
+    }
+
+    public Category getCategory() {
+        return category;
     }
 
     public String getTitle() {
@@ -82,5 +89,13 @@ public class Recipe {
 
     public void setImg(String img) {
         this.img = img;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public String getCategoryName() {
+        return category.getName();
     }
 }

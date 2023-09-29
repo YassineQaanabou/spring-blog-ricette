@@ -27,6 +27,7 @@
         <th>Time</th>
         <th>Portions</th>
         <th>Preparation</th>
+        <th>Category</th>
         <th>Functions</th>
 
         <th></th>
@@ -40,6 +41,8 @@
         <td th:text="${recipe.duration}"></td>
         <td th:text="${recipe.portions}"></td>
         <td th:text="${recipe.preparation}"></td>
+        <td th:text="${recipe.getCategoryName}"></td>
+
         <td><a class="btn btn-warning" th:href="@{/administration/edit/{id}(id=${recipe.id})}">Edit</a>
             <form th:action="@{/administration/delete/{id}(id=${recipe.id})}" method="POST" class="d-inline">
                 <button type="submit" class="btn btn-warning ">Delete</button>

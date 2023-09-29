@@ -19,6 +19,7 @@
         <th>ingredients</th>
         <th>Time</th>
         <th>Portions</th>
+        <th>category</th>
         <th>Preparation</th>
         <th></th>
     </tr>
@@ -29,6 +30,7 @@
         <td th:text="${recipe.ingredients}"></td>
         <td th:text="${recipe.duration}"></td>
         <td th:text="${recipe.portions}"></td>
+        <td th:text="${recipe.getCategoryName}"></td>
         <td th:text="${recipe.preparation}"></td>
     </tr>
     </tbody>
